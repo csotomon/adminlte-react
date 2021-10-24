@@ -1,31 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 
 
 import Header from './Header'
 
-import {
-    CardText,
-    Navbar,
-    CardTitle,
-    CardBody,
-    CardLink,
-    CardHeader,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    Card,
-    InputGroup,
-    InputGroupAddon,
-    Form,
-    Button,
-    Media,
-    Badge
-} from 'reactstrap';
 
 import SideBar from './SideBar';
 import Starter from '../../pages/Starter';

@@ -27,7 +27,7 @@ function Header() {
                 {/* Left navbar links */}
                 <Nav navbar>
                     <NavItem>
-                        <NavLink href="#" data-widget="pushmenu" href="#" role="button"><FontAwesomeIcon icon={["fas", "bars"]} /></NavLink>
+                        <NavLink href="#" data-widget="pushmenu" role="button"><FontAwesomeIcon icon={["fas", "bars"]} /></NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="#index3" className="d-none d-sm-inline-block">Home</NavLink>
@@ -41,7 +41,7 @@ function Header() {
                 <Nav navbar className="ml-auto">
                     {/* Navbar Search */}
                     <NavItem>
-                        <NavLink href="#" data-widget="navbar-search" href="#" role="button"><FontAwesomeIcon icon={["fas", "search"]} /></NavLink>
+                        <NavLink href="#" data-widget="navbar-search" role="button"><FontAwesomeIcon icon={["fas", "search"]} /></NavLink>
                         <div className="navbar-search-block">
                             <Form inline={true}>
                                 <InputGroup size="sm">
@@ -171,10 +171,10 @@ function Header() {
                         </DropdownMenu>
                     </UncontrolledDropdown>
                     <NavItem>
-                        <NavLink href="#" data-widget="fullscreen" href="#" role="button"><FontAwesomeIcon icon={["fas", "expand-arrows-alt"]} /></NavLink>
+                        <NavLink href="#" data-widget="fullscreen" role="button"><FontAwesomeIcon icon={["fas", "expand-arrows-alt"]} /></NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="#" data-widget="control-sidebar" data-slide="true" href="#" role="button"><FontAwesomeIcon icon={["fas", "th-large"]} /></NavLink>
+                        <NavLink href="#" data-widget="control-sidebar" data-slide="true" role="button"><FontAwesomeIcon icon={["fas", "th-large"]} /></NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>
