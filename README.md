@@ -12,7 +12,7 @@ Installation
 - Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
 - Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/angularAdminLTE.git
+git clone https://github.com/YOUR_USERNAME/adminlet-react.git
 ```
 - Install the packages
 ```bash
@@ -27,7 +27,7 @@ Running the application
 npm start
 ```
 - For starter page Navigate to [http://localhost:3000/main/starter](http://localhost:3000/main/starter)
-- For login page Navigate to [http://localhost:4200/admin](http://localhost:4200/admin)
+- For login page Navigate to [http://localhost:3000/login](http://localhost:3000/login)
 
 Browser Support
 ---------------
