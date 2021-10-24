@@ -7,6 +7,29 @@ import user2 from './../utils/img/user2-160x160.jpg'
 
 import adminLTELogo from './../utils/img/AdminLTELogo.png'
 
+import {
+    CardText,
+    Navbar,
+    CardTitle,
+    CardBody,
+    CardLink,
+    CardHeader,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Card,
+    InputGroup,
+    InputGroupAddon,
+    Form,
+    Button,
+    Media,
+    Badge
+} from 'reactstrap';
+
 function Starter() {
     useEffect(() => {
         let styles = ['hold-transition', 'sidebar-mini'];
@@ -22,139 +45,159 @@ function Starter() {
     return (
         <>
             {/* // Navbar */}
-            <nav className="main-header navbar navbar-expand navbar-white navbar-light">
-                {/* Left navbar links  */}
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <a className="nav-link" data-widget="pushmenu" href="#" role="button"><FontAwesomeIcon icon={["fas", "bars"]} /></a>
-                    </li>
-                    <li className="nav-item d-none d-sm-inline-block">
-                        <a href="index3.html" className="nav-link">Home</a>
-                    </li>
-                    <li className="nav-item d-none d-sm-inline-block">
-                        <a href="#" className="nav-link">Contact</a>
-                    </li>
-                </ul>
+            <Navbar light className="main-header navbar-white" expand={true}>
+                {/* Left navbar links */}
+                <Nav navbar>
+                    <NavItem>
+                        <NavLink href="#" data-widget="pushmenu" href="#" role="button"><FontAwesomeIcon icon={["fas", "bars"]} /></NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#index3" className="d-none d-sm-inline-block">Home</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#contact" className="d-none d-sm-inline-block">Contact</NavLink>
+
+                    </NavItem>
+                </Nav>
                 {/* Right navbar links */}
-                <ul className="navbar-nav ml-auto">
+                <Nav navbar className="ml-auto">
                     {/* Navbar Search */}
-                    <li className="nav-item">
-                        <a className="nav-link" data-widget="navbar-search" href="#" role="button">
-                            <FontAwesomeIcon icon={["fas", "search"]} />
-                        </a>
+                    <NavItem>
+                        <NavLink href="#" data-widget="navbar-search" href="#" role="button"><FontAwesomeIcon icon={["fas", "search"]} /></NavLink>
                         <div className="navbar-search-block">
-                            <form className="form-inline">
-                                <div className="input-group input-group-sm">
-                                    <input className="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
-                                    <div className="input-group-append">
-                                        <button className="btn btn-navbar" type="submit">
+                            <Form inline={true}>
+                                <InputGroup size="sm">
+                                    <input className="form-control form-control-navbar" type="search" placeholder="Search"
+                                        aria-label="Search" />
+                                    <InputGroupAddon addonType="append">
+                                        <Button className="btn-navbar" type="submit" color="">
                                             <FontAwesomeIcon icon={["fas", "search"]} />
-                                        </button>
-                                        <button className="btn btn-navbar" type="button" data-widget="navbar-search">
+                                        </Button>
+                                        <Button className="btn-navbar" type="button" data-widget="navbar-search" color="">
                                             <FontAwesomeIcon icon={["fas", "times"]} />
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
+                                        </Button>
+                                    </InputGroupAddon>
+                                </InputGroup>
+
+                            </Form>
                         </div>
-                    </li>
-                    {/* Messages Dropdown Menu  */}
-                    <li className="nav-item dropdown">
-                        <a className="nav-link" data-toggle="dropdown" href="#">
+                    </NavItem>
+                    {/* <!-- Messages Dropdown Menu --> */}
+                    <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle
+                            tag="a"
+                            data-toggle="dropdown"
+                            aria-haspopup={false}
+                            nav={true}
+                        >
                             <FontAwesomeIcon icon={["far", "comments"]} />
-                            <span className="badge badge-danger navbar-badge">3</span>
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <a href="#" className="dropdown-item">
-                                {/* Message Start */}
-                                <div className="media">
-                                    <img src={user1} alt="User Avatar" className="img-size-50 mr-3 img-circle" />
-                                    <div className="media-body">
+                            <Badge color="danger" className="navbar-badge">3</Badge>
+                        </DropdownToggle>
+                        <DropdownMenu right className="dropdown-menu-lg">
+                            <DropdownItem tag="a" href="#">
+                                {/* <!-- Message Start --> */}
+                                <Media>
+                                    <Media object src={user1} alt="User Avatar" className="img-size-50 mr-3 img-circle" />
+                                    <Media body className="clearfix">
                                         <h3 className="dropdown-item-title">
                                             Brad Diesel
-                                            <span className="float-right text-sm text-danger"><FontAwesomeIcon icon={["fas", "star"]} /></span>
+                                            <span className="float-right text-sm text-danger">
+                                                <FontAwesomeIcon icon={["fas", "star"]} />
+                                            </span>
                                         </h3>
                                         <p className="text-sm">Call me whenever you can...</p>
-                                        <p className="text-sm text-muted"><FontAwesomeIcon icon={["far", "clock"]} className="mr-1" />4 Hours Ago</p>
-                                    </div>
-                                </div>
-                                {/* Message End  */}
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                {/* Message Start */}
-                                <div className="media">
-                                    <img src={user8} alt="User Avatar" className="img-size-50 img-circle mr-3" />
-                                    <div className="media-body">
+                                        <p className="text-sm text-muted">
+                                            <FontAwesomeIcon icon={["far", "clock"]} className="mr-1" />4 Hours Ago
+                                        </p>
+                                    </Media>
+                                </Media>
+                                {/* <!-- Message End --> */}
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem tag="a" href="#">
+                                {/* <!-- Message Start --> */}
+                                <Media>
+                                    <Media object src={user8} alt="User Avatar" className="img-size-50 mr-3 img-circle" />
+                                    <Media body className="clearfix">
                                         <h3 className="dropdown-item-title">
                                             John Pierce
-                                            <span className="float-right text-sm text-muted"><FontAwesomeIcon icon={["fas", "star"]} /></span>
+                                            <span className="float-right text-sm text-muted">
+                                                <FontAwesomeIcon icon={["fas", "star"]} />
+                                            </span>
                                         </h3>
                                         <p className="text-sm">I got your message bro</p>
-                                        <p className="text-sm text-muted"><FontAwesomeIcon icon={["far", "clock"]} className="mr-1" /> 4 Hours Ago</p>
-                                    </div>
-                                </div>
-                                {/* Message End */}
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                {/* Message Start */}
-                                <div className="media">
-                                    <img src={user3} alt="User Avatar" className="img-size-50 img-circle mr-3" />
-                                    <div className="media-body">
+                                        <p className="text-sm text-muted">
+                                            <FontAwesomeIcon icon={["far", "clock"]} className="mr-1" />4 Hours Ago
+                                        </p>
+                                    </Media>
+                                </Media>
+                                {/* <!-- Message End --> */}
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem tag="a" href="#">
+                                {/* <!-- Message Start --> */}
+                                <Media>
+                                    <Media object src={user8} alt="User Avatar" className="img-size-50 mr-3 img-circle" />
+                                    <Media body className="clearfix">
                                         <h3 className="dropdown-item-title">
                                             Nora Silvester
-                                            <span className="float-right text-sm text-warning"><FontAwesomeIcon icon={["fas", "star"]} /></span>
+                                            <span className="float-right text-sm text-warning">
+                                                <FontAwesomeIcon icon={["fas", "star"]} />
+                                            </span>
                                         </h3>
                                         <p className="text-sm">The subject goes here</p>
-                                        <p className="text-sm text-muted"><FontAwesomeIcon icon={["far", "clock"]} className="mr-1" /> 4 Hours Ago</p>
-                                    </div>
-                                </div>
-                                {/* Message End */}
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item dropdown-footer">See All Messages</a>
-                        </div>
-                    </li>
-                    {/* Notifications Dropdown Menu */}
-                    <li className="nav-item dropdown">
-                        <a className="nav-link" data-toggle="dropdown" href="#">
+                                        <p className="text-sm text-muted">
+                                            <FontAwesomeIcon icon={["far", "clock"]} className="mr-1" />4 Hours Ago
+                                        </p>
+                                    </Media>
+                                </Media>
+                                {/* <!-- Message End --> */}
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem className="dropdown-footer" tag="a" href="#">See All Messages</DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle
+                            tag="a"
+                            data-toggle="dropdown"
+                            aria-haspopup={false}
+                            nav={true}>
                             <FontAwesomeIcon icon={["far", "bell"]} />
-                            <span className="badge badge-warning navbar-badge">15</span>
-                        </a>
-                        <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                            <span className="dropdown-header">15 Notifications</span>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                <FontAwesomeIcon icon={["fas", "envelope"]} className="mr-2" /> 4 new messages
+                            <Badge color="warning" className="navbar-badge">15</Badge>
+                        </DropdownToggle>
+                        <DropdownMenu right className="dropdown-menu-lg">
+                            <DropdownItem header tag="span">15 Notifications</DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem tag="a" href="#">
+                                <FontAwesomeIcon icon={["fas", "envelope"]} className="mr-2" />
+                                4 new messages
                                 <span className="float-right text-muted text-sm">3 mins</span>
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                <FontAwesomeIcon icon={["fas", "users"]} className="mr-2" /> 8 friend requests
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem tag="a" href="#">
+                                <FontAwesomeIcon icon={["fas", "users"]} className="mr-2" />
+                                8 friend requests
                                 <span className="float-right text-muted text-sm">12 hours</span>
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">
-                                <FontAwesomeIcon icon={["fas", "file"]} className="mr-2" /> 3 new reports
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem tag="a" href="#">
+                                <FontAwesomeIcon icon={["fas", "file"]} className="mr-2" />
+                                3 new reports
                                 <span className="float-right text-muted text-sm">2 days</span>
-                            </a>
-                            <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item dropdown-footer">See All Notifications</a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" data-widget="fullscreen" href="#" role="button">
-                            <FontAwesomeIcon icon={["fas", "expand-arrows-alt"]} />
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                            <FontAwesomeIcon icon={["fas", "th-large"]} />
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem className="dropdown-footer" tag="a" href="#">See All Notifications</DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <NavItem>
+                        <NavLink href="#" data-widget="fullscreen" href="#" role="button"><FontAwesomeIcon icon={["fas", "expand-arrows-alt"]} /></NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#" data-widget="control-sidebar" data-slide="true" href="#" role="button"><FontAwesomeIcon icon={["fas", "th-large"]} /></NavLink>
+                    </NavItem>
+                </Nav>
+            </Navbar>
             {/* /.navbar  */}
 
             {/* Main Sidebar Container */}
@@ -178,55 +221,55 @@ function Starter() {
                     </div>
 
                     {/* SidebarSearch Form */}
-                    <div className="form-inline">
-                        <div className="input-group" data-widget="sidebar-search">
+                    <Form inline>
+                        <InputGroup data-widget="sidebar-search">
                             <input className="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search" />
-                            <div className="input-group-append">
-                                <button className="btn btn-sidebar">
+                            <InputGroupAddon addonType="append">
+                                <Button className="btn-sidebar" color="">
                                     <FontAwesomeIcon icon={["fas", "search"]} fixedWidth />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                                </Button>
+                            </InputGroupAddon>
+                        </InputGroup>
+                    </Form>
+
 
                     {/* Sidebar Menu */}
                     <nav className="mt-2">
-                        <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <Nav className="nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             {/* Add icons to the links using the .nav-icon class with font-awesome or any other icon font library --> */}
-                            <li className="nav-item menu-open">
-                                <a href="#" className="nav-link active">
+                            <NavItem className="menu-open">
+                                <NavLink href="#" active={true}>
                                     <FontAwesomeIcon icon={["fas", "tachometer-alt"]} className="nav-icon" />
                                     <p>
                                         Starter Pages
                                         <FontAwesomeIcon icon={["fas", "angle-left"]} className="right" />
                                     </p>
-                                </a>
-                                <ul className="nav nav-treeview">
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link active">
-                                        <FontAwesomeIcon icon={["far", "circle"]} className="nav-icon" />
+                                </NavLink>
+                                <Nav className="nav-treeview">
+                                    <NavItem>
+                                        <NavLink href="#" active={true}>
+                                            <FontAwesomeIcon icon={["far", "circle"]} className="nav-icon" />
                                             <p>Active Page</p>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="#" className="nav-link">
-                                        <FontAwesomeIcon icon={["far", "circle"]} className="nav-icon" />
+                                        </NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink href="#">
+                                            <FontAwesomeIcon icon={["far", "circle"]} className="nav-icon" />
                                             <p>Inactive Page</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a href="#" className="nav-link">
-                                <FontAwesomeIcon icon={["fas", "th"]} className="nav-icon" />
-                                    
+                                        </NavLink>
+                                    </NavItem>
+                                </Nav>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#">
+                                    <FontAwesomeIcon icon={["fas", "th"]} className="nav-icon" />
                                     <p>
                                         Simple Link
-                                        <span className="right badge badge-danger">New</span>
+                                        <Badge color="danger" className="right">New</Badge>
                                     </p>
-                                </a>
-                            </li>
-                        </ul>
+                                </NavLink>
+                            </NavItem>
+                        </Nav>
                     </nav>
                     {/* /.sidebar-menu */}
                 </div>
@@ -261,59 +304,59 @@ function Starter() {
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-lg-6">
-                                <div className="card">
-                                    <div className="card-body">
-                                        <h5 className="card-title">Card title</h5>
+                                <Card>
+                                    <CardBody>
+                                        <CardTitle tag="h5">Card title</CardTitle>
 
-                                        <p className="card-text">
+                                        <CardText>
                                             Some quick example text to build on the card title and make up the bulk of the card's
                                             content.
-                                        </p>
+                                        </CardText>
 
-                                        <a href="#" className="card-link">Card link</a>
-                                        <a href="#" className="card-link">Another link</a>
-                                    </div>
-                                </div>
+                                        <CardLink href="#">Card link</CardLink>
+                                        <CardLink href="#">Another link</CardLink>
+                                    </CardBody>
+                                </Card>
 
-                                <div className="card card-primary card-outline">
-                                    <div className="card-body">
-                                        <h5 className="card-title">Card title</h5>
+                                <Card className="card-primary card-outline">
+                                    <CardBody>
+                                        <CardTitle tag="h5">Card title</CardTitle>
 
-                                        <p className="card-text">
+                                        <CardText>
                                             Some quick example text to build on the card title and make up the bulk of the card's
                                             content.
-                                        </p>
-                                        <a href="#" className="card-link">Card link</a>
-                                        <a href="#" className="card-link">Another link</a>
-                                    </div>
-                                </div>
+                                        </CardText>
+                                        <CardLink href="#">Card link</CardLink>
+                                        <CardLink href="#">Another link</CardLink>
+                                    </CardBody>
+                                </Card>
                                 {/* /.card */}
                             </div>
                             {/* /.col-md-6 */}
                             <div className="col-lg-6">
-                                <div className="card">
-                                    <div className="card-header">
+                                <Card>
+                                    <CardHeader>
                                         <h5 className="m-0">Featured</h5>
-                                    </div>
-                                    <div className="card-body">
-                                        <h6 className="card-title">Special title treatment</h6>
+                                    </CardHeader>
+                                    <CardBody>
+                                        <CardTitle tag="h6">Special title treatment</CardTitle>
 
-                                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" className="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                        <Button href="#" color="primary">Go somewhere</Button>
+                                    </CardBody>
+                                </Card>
 
-                                <div className="card card-primary card-outline">
-                                    <div className="card-header">
+                                <Card className="card-primary card-outline">
+                                    <CardHeader>
                                         <h5 className="m-0">Featured</h5>
-                                    </div>
-                                    <div className="card-body">
-                                        <h6 className="card-title">Special title treatment</h6>
+                                    </CardHeader>
+                                    <CardBody>
+                                        <CardTitle tag="h6">Special title treatment</CardTitle>
 
-                                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" className="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                                        <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                        <Button href="#" color="primary">Go somewhere</Button>
+                                    </CardBody>
+                                </Card>
                             </div>
                             {/* /.col-md-6 */}
                         </div>
