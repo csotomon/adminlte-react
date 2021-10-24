@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './utils/styles/custom-admin-lte.scss'
+//import 'admin-lte/dist/css/adminlte.css'
+import 'icheck-bootstrap/icheck-bootstrap.min.css'
 
 ReactDOM.render(
   <React.StrictMode>
